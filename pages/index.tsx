@@ -9,7 +9,16 @@ import { siteConfig } from '../site.config';
 const inter = Inter({ subsets: ['latin'] });
 
 const Home: NextPage = () => {
-  return <Layout />;
+  return (
+    <Layout>
+      <div className='pt-12'>
+        <h1 className='mb-8 text-5xl'>{siteConfig.title}</h1>
+        <div className='grid w-full my-12 mt-10 md:gap-6 md:grid-cols-2'>
+          {/* Card */}
+        </div>
+      </div>
+    </Layout>
+  );
 };
 
 export default Home;
