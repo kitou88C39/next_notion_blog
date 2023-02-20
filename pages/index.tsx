@@ -3,6 +3,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
+import Card from '../components/Card';
 import Layout from '../components/Layout';
 import { siteConfig } from '../site.config';
 import { sampleCards } from '../utils/sample';
@@ -17,7 +18,7 @@ const Home: NextPage = () => {
         <div className='grid w-full my-12 mt-10 md:gap-6 md:grid-cols-2'>
           {/* Card */}
           {sampleCards.map((page, index) => (
-            <p key={index}>{page.name}</p>
+            <Card key={index} page={page} />
           ))}
         </div>
       </div>
