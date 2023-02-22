@@ -10,7 +10,7 @@ const Navbar = () => {
           className='w-full rounded-md bg-grey-light'
           aria-label='breadcrumb'
         >
-          <Link href='/' className='text-gray-500 hover:text-gray-600'>
+          <Link href='/' className='text-gray-500 hover:text-gray-600' legacyBehavior>
 
             {siteConfig.title}
 
