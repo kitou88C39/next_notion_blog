@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Card from '../components/Card';
 import Layout from '../components/Layout';
 import { siteConfig } from '../site.config';
+import { IndexProps } from '../types/types';
 import { fetchPages } from '../utils/notion';
 import { sampleCards } from '../utils/sample';
 
@@ -18,15 +19,15 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-const Home: NextPage = ({ pages }) => {
-  //console.log(pages);
+const Home: NextPage<IndexProps> = ({ pages }) => {
+  console.log(pages);
   return (
     <Layout>
       <div className='pt-12'>
         <h1 className='mb-8 text-5xl'>{siteConfig.title}</h1>
         <div className='grid w-full my-12 mt-10 md:gap-6 md:grid-cols-2'>
           {/* Card */}
-          {sampleCards.map((page, index) => (
+          {pages.map((page, index) => (
             <Card key={index} page={page} />
           ))}
         </div>
