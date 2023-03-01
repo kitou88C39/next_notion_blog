@@ -45,7 +45,10 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
   };
 };
 
-const Article: NextPage<ArticleProps> = ({ page }) => {
+const Article: NextPage<ArticleProps> = ({ page, blocks }) => {
+  console.log('page', page);
+  console.log('blocks', blocks);
+  return <></>;
   return (
     <Layout>
       <article className='w-full'>
