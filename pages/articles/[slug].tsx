@@ -1,11 +1,32 @@
-import { GetServerSideProps, GetStaticProps, NextPage } from 'next';
+import {
+  GetServerSideProps,
+  GetStaticPaths,
+  GetStaticProps,
+  NextPage,
+} from 'next';
 import Image from 'next/image';
 import React from 'react';
 import ArticleMeta from '../../components/ArticleMeta';
 import Layout from '../../components/Layout';
 import { ArticleProps, Params } from '../../types/types';
 import { fetchBlocksByPageId, fetchPages } from '../../utils/notion';
+import { getText } from '../../utils/property';
 import { sampleCards } from '../../utils/sample';
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const { results } = await fetchPages({});
+  const paths = results.map((page: any) => {
+    return {
+      params: {
+        slug: getText(page.properties.slug.rich_text),
+      },
+    };
+  });
+  return {
+    paths: paths,
+    fallback: 'blocking',
+  };
+};
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
   const { slug } = ctx.params as Params;
