@@ -17,3 +17,57 @@ p {
 main {
   @apply flex flex-col items-center justify-center min-h-screen;
 }
+
+.nbr-inline-code {
+  @apply px-2 py-1 text-sm font-normal text-pink-500 break-words bg-gray-100 rounded;
+}
+.nbr-caption {
+  @apply text-inherit opacity-70;
+}
+.nbr-link {
+  @apply no-underline border-b border-gray-700 border-solid text-inherit opacity-70;
+}
+.nbr-block-quote {
+  @apply px-4 py-2 border-l-4 border-gray-700 border-solid;
+}
+.nbr-block-code {
+  @apply text-sm;
+}
+/* Hide only scrollbar */
+.nbr-block-code pre::-webkit-scrollbar {
+  @apply hidden !important;
+}
+.nbr-block-code .syntax-highlighter-pre {
+  @apply rounded-lg;
+  @apply p-5 !important;
+}
+.nbr-block-callout {
+  @apply flex py-5 pl-4 pr-6 bg-gray-100 rounded;
+}
+.nbr-block-callout .nbr-icon {
+  @apply min-w-min w-4 relative top-0.5;
+}
+.nbr-block-callout .nbr-callout {
+  @apply w-full overflow-hidden;
+  -webkit-margin-start: 8px;
+  margin-inline-start: 8px;
+}
+.nbr-block-ul {
+  @apply pl-4 list-disc;
+}
+.nbr-block-ol {
+  @apply pl-4 list-decimal;
+}
+/* Add margin-bottom for each block */
+.nbr-blocks > div {
+  @apply mb-4;
+}
+.nbr-block-table_of_contents {
+  @apply p-5 list-disc bg-gray-100 rounded;
+}
+.nbr-block-table_of_contents > div {
+  @apply my-1;
+}
+.nbr-block-table_of_contents a {
+  @apply text-gray-600 underline;
+}
