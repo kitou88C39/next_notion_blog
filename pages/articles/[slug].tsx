@@ -63,10 +63,11 @@ const Article: NextPage<ArticleProps> = ({ page, blocks }) => {
           ))}
         </div> */}
         <div className='my-12'>
-          <NotionBlocks blocks={blocks} />
+          <NotionBlocks blocks={blocks} isCodeHighlighter={true} />
         </div>
       </article>
     </Layout>
   );
 };
+
 export default Article;
